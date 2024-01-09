@@ -1,1 +1,3 @@
-inside q-a-s
+spring:
+    application:
+        name: quiz-category-service-from-config
