@@ -1,4 +1,7 @@
 management:
+    health:
+        circuitbreakers:
+            enabled: true
     tracing:
         sampling:
             probability: 1.0
@@ -8,7 +11,7 @@ management:
     endpoints:
         web:
             exposure:
-                include: "*"
+                include: health
             
 resilience4j:
     circuitbreaker:
