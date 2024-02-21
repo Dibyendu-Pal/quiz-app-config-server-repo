@@ -9,6 +9,9 @@ management:
         web:
             exposure:
                 include: health
+    health:
+        circuitbreakers:
+            enabled: true
             
 resilience4j:
     circuitbreaker:
@@ -29,3 +32,23 @@ resilience4j:
             default:
                 maxAttempts: 3
                 waitDuration: 200
+
+keycloak-configuration:
+    server-url: http://localhost:9090
+    realm: quiz-microservice
+    client-id: quiz-app
+    client-secret: uAifguUSCoKmNETEeEh9Qv9dA0oe0ac0
+
+jwt:
+    auth:
+        converter:
+            resource_id: quiz-app
+            principal_attribute: preferred_username
+
+spring:
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:9090/realms/quiz-microservice
+                    jwk-set-uri: http://localhost:9090/realms/quiz-microservice/protocol/openid-connect/certs
