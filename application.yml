@@ -1,4 +1,7 @@
 management:
+    zipkin:
+        tracing:
+            endpoint: http://localhost:9411
     tracing:
         sampling:
             probability: 1.0
