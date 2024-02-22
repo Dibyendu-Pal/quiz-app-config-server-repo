@@ -1,3 +1,8 @@
+url:
+    quiz-category-service: http://localhost:8001
+    question-answer-service: http://localhost:8002
+    wrong-option-service: http://localhost:8003
+
 management:
     zipkin:
         tracing:
